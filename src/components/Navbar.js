@@ -27,17 +27,17 @@ function Navbar() {
       </Nav.Item>
       <Nav.Item>
         <Nav.Link href="/user" className="nav">
-          <i class="fa-regular fa-user"></i>
+          <i className="fa-regular fa-user"></i>
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link href="/cart" className="nav">
-          <i class="fa-solid fa-cart-shopping"></i>
+          <i className="fa-solid fa-cart-shopping"></i>
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link href="/search" className="nav">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass"></i>
         </Nav.Link>
       </Nav.Item>
     </Nav>
