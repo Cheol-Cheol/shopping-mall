@@ -1,51 +1,41 @@
 /*eslint-disable*/
 import "./App.css";
-import { Nav } from "react-bootstrap";
+import { useState } from "react";
+import { Card } from "react-bootstrap";
+import Navbar from "./components/Navbar";
+import data from "./data";
 
 function App() {
+  let [cloth, setCloth] = useState(data);
+
   return (
     <div className="App">
       {/* TODO: router 설정 시 link 달아줘야 함 */}
       <h1 className="site-name">CHEOL CHEOL</h1>
-      {/* FIXME: NavBar */}
-      <Nav className="justify-content-center" activeKey="best">
-        <Nav.Item>
-          {/* TODO: Nav.Link - router 설정 시 router로 관리해야 함 */}
-          <Nav.Link eventKey="best" href="/" className="nav">
-            BEST
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/outwear" className="nav">
-            OUTWEAR
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/top" className="nav">
-            TOP
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/bottom" className="nav">
-            BOTTOM
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/user" className="nav">
-            <i class="fa-regular fa-user"></i>
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/cart" className="nav">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/search" className="nav">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
+
+      <Navbar />
+
+      <div className="container">
+        <div className="row">
+          {cloth.map((item, idx) => {
+            return (
+              <div className="col-md-6 col-lg-3">
+                <Card border="light">
+                  <Card.Img
+                    variant="top"
+                    src={`img/${idx + 1}.jpeg`}
+                    className="card-img"
+                  />
+                  <Card.Body>
+                    <Card.Text>{item.title}</Card.Text>
+                    <Card.Text>{item.price} 원</Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

@@ -13,3 +13,9 @@
   font-size: 14px;
   color: black;
 }
+.container {
+  margin-top: 40px;
+}
+.card-img {
+  height: 380px;
+}
